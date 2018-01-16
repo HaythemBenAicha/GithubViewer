@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12FDA4C7200D78BC00FF29C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */; };
-		12FDA4C9200D78BC00FF29C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA4C8200D78BC00FF29C2 /* ViewController.swift */; };
+		12FDA4C9200D78BC00FF29C2 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA4C8200D78BC00FF29C2 /* RepositoriesViewController.swift */; };
 		12FDA4CC200D78BC00FF29C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12FDA4CA200D78BC00FF29C2 /* Main.storyboard */; };
 		12FDA4CE200D78BC00FF29C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12FDA4CD200D78BC00FF29C2 /* Assets.xcassets */; };
 		12FDA4D1200D78BC00FF29C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12FDA4CF200D78BC00FF29C2 /* LaunchScreen.storyboard */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		12FDA4C3200D78BC00FF29C2 /* GithubViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		12FDA4C8200D78BC00FF29C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12FDA4C8200D78BC00FF29C2 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		12FDA4CB200D78BC00FF29C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12FDA4CD200D78BC00FF29C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12FDA4D0200D78BC00FF29C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12D48F88200EB02200FC8EA0 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		12D48F89200EB02F00FC8EA0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		12D48F8A200EB05300FC8EA0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12D48F8C200EB12A00FC8EA0 /* Repositories */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		12D48F8B200EB05E00FC8EA0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		12D48F8C200EB12A00FC8EA0 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				12FDA4C8200D78BC00FF29C2 /* RepositoriesViewController.swift */,
+				12FDA4CA200D78BC00FF29C2 /* Main.storyboard */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		12FDA4BA200D78BC00FF29C2 = {
 			isa = PBXGroup;
 			children = (
@@ -61,11 +100,12 @@
 		12FDA4C5200D78BC00FF29C2 /* GithubViewer */ = {
 			isa = PBXGroup;
 			children = (
-				12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */,
-				12FDA4C8200D78BC00FF29C2 /* ViewController.swift */,
-				12FDA4CA200D78BC00FF29C2 /* Main.storyboard */,
-				12FDA4CD200D78BC00FF29C2 /* Assets.xcassets */,
+				12D48F88200EB02200FC8EA0 /* Global */,
+				12D48F89200EB02F00FC8EA0 /* Models */,
+				12D48F8A200EB05300FC8EA0 /* Views */,
+				12D48F8B200EB05E00FC8EA0 /* ViewModels */,
 				12FDA4CF200D78BC00FF29C2 /* LaunchScreen.storyboard */,
+				12FDA4CD200D78BC00FF29C2 /* Assets.xcassets */,
 				12FDA4D2200D78BC00FF29C2 /* Info.plist */,
 			);
 			path = GithubViewer;
@@ -219,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12FDA4C9200D78BC00FF29C2 /* ViewController.swift in Sources */,
+				12FDA4C9200D78BC00FF29C2 /* RepositoriesViewController.swift in Sources */,
 				12FDA4C7200D78BC00FF29C2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
