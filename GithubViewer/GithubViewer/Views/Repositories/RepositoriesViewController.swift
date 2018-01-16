@@ -9,7 +9,12 @@
 import UIKit
 
 class RepositoriesViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var repositoriesSearchBar: UISearchBar!
+    @IBOutlet weak var repositoriesTableView: UITableView!
+    
+    // MARK: - Lifecycle Methodes
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
