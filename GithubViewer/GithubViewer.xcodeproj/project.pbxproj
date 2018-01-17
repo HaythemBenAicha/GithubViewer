@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12904F2E2010143A00289779 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F2D2010143A00289779 /* Constants.swift */; };
+		12904F30201014EE00289779 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F2F201014EE00289779 /* RepositoryModel.swift */; };
 		12D48F90200EB57200FC8EA0 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D48F8F200EB57200FC8EA0 /* RepositoryCell.swift */; };
 		12FDA4C7200D78BC00FF29C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */; };
 		12FDA4C9200D78BC00FF29C2 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA4C8200D78BC00FF29C2 /* RepositoriesViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12904F2D2010143A00289779 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		12904F2F201014EE00289779 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		12D48F8F200EB57200FC8EA0 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		12FDA4C3200D78BC00FF29C2 /* GithubViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */,
+				12904F2D2010143A00289779 /* Constants.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -53,6 +58,7 @@
 		12D48F89200EB02F00FC8EA0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				12904F2F201014EE00289779 /* RepositoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,8 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12D48F90200EB57200FC8EA0 /* RepositoryCell.swift in Sources */,
+				12904F30201014EE00289779 /* RepositoryModel.swift in Sources */,
 				12FDA4C9200D78BC00FF29C2 /* RepositoriesViewController.swift in Sources */,
 				12FDA4C7200D78BC00FF29C2 /* AppDelegate.swift in Sources */,
+				12904F2E2010143A00289779 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
