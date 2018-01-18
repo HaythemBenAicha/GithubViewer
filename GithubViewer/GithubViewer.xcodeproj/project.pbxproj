@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		12904F2E2010143A00289779 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F2D2010143A00289779 /* Constants.swift */; };
 		12904F30201014EE00289779 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F2F201014EE00289779 /* RepositoryModel.swift */; };
+		12904F342010164400289779 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F332010164400289779 /* APIResource.swift */; };
+		12904F37201016B900289779 /* RepositoriesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F36201016B900289779 /* RepositoriesAPI.swift */; };
+		12904F392010170000289779 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F382010170000289779 /* APIClient.swift */; };
 		12D48F90200EB57200FC8EA0 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D48F8F200EB57200FC8EA0 /* RepositoryCell.swift */; };
 		12FDA4C7200D78BC00FF29C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */; };
 		12FDA4C9200D78BC00FF29C2 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FDA4C8200D78BC00FF29C2 /* RepositoriesViewController.swift */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		12904F2D2010143A00289779 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		12904F2F201014EE00289779 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		12904F332010164400289779 /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
+		12904F36201016B900289779 /* RepositoriesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesAPI.swift; sourceTree = "<group>"; };
+		12904F382010170000289779 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		12D48F8F200EB57200FC8EA0 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		12FDA4C3200D78BC00FF29C2 /* GithubViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FDA4C6200D78BC00FF29C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12904F312010161A00289779 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				12904F322010162600289779 /* Core */,
+				12904F352010169E00289779 /* Repositories */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		12904F322010162600289779 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				12904F332010164400289779 /* APIResource.swift */,
+				12904F382010170000289779 /* APIClient.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		12904F352010169E00289779 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				12904F36201016B900289779 /* RepositoriesAPI.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		12D48F88200EB02200FC8EA0 /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +149,7 @@
 		12FDA4C5200D78BC00FF29C2 /* GithubViewer */ = {
 			isa = PBXGroup;
 			children = (
+				12904F312010161A00289779 /* API */,
 				12D48F88200EB02200FC8EA0 /* Global */,
 				12D48F89200EB02F00FC8EA0 /* Models */,
 				12D48F8A200EB05300FC8EA0 /* Views */,
@@ -276,10 +309,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12904F37201016B900289779 /* RepositoriesAPI.swift in Sources */,
 				12D48F90200EB57200FC8EA0 /* RepositoryCell.swift in Sources */,
 				12904F30201014EE00289779 /* RepositoryModel.swift in Sources */,
+				12904F392010170000289779 /* APIClient.swift in Sources */,
 				12FDA4C9200D78BC00FF29C2 /* RepositoriesViewController.swift in Sources */,
 				12FDA4C7200D78BC00FF29C2 /* AppDelegate.swift in Sources */,
+				12904F342010164400289779 /* APIResource.swift in Sources */,
 				12904F2E2010143A00289779 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
