@@ -6,12 +6,14 @@
 //  Copyright © 2018 Haythem BEN AICHA. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
+// MARK: - Enum
 enum RepositoriesAPI {
     case userRepositories (username : String)
 }
 
+// MARK: - Config request params
 extension RepositoriesAPI: APIResource {
     
     var path : String {
@@ -29,3 +31,20 @@ extension RepositoriesAPI: APIResource {
     }
     
 }
+
+// MARK: - Get Server Sesponse
+extension APIClient {
+    
+    class func repositoriesAPIClient() -> APIClient {
+        return APIClient(baseURL: (Constants.Config.baseURL)!)
+    }
+    
+    func repositoriesWithUsername(username: String) -> Observable<[RepositoryModel]> {
+        if username.isEmpty {
+            return Observable.just([])
+        }
+        return objects(resource: RepositoriesAPI.userRepositories(username: username))
+        
+    }
+}
+

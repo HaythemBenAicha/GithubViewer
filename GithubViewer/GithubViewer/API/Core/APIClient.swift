@@ -23,13 +23,25 @@ enum HttpMethod: String {
 
 final class APIClient {
     
-    // MARK: - Private
+    // MARK: - Private Properies
     private let baseURL: URL
     private let session: URLSession
     
     init(baseURL: URL, configuration: URLSessionConfiguration = URLSessionConfiguration.default) {
         self.baseURL = baseURL
         self.session = URLSession(configuration: configuration)
+    }
+    
+    func objects<T: Decodable>(resource: APIResource) -> Observable<T> {
+        return data(resource: resource).map { data in
+            let objects : T
+            do{
+                objects = try JSONDecoder().decode(T.self, from: data)
+            }catch{
+                throw APIClientError.ParsingError
+            }
+            return objects
+        }
     }
 }
 

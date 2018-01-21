@@ -13,8 +13,22 @@ final class RepositoriesViewModel {
     
     var searchText = Variable<String>("")
     
-    func getRepositories() -> Driver<[RepositoryModel]>{
-        return Observable.just([])
+    func getRepositories(client : APIClient = APIClient.repositoriesAPIClient()) -> Driver<[RepositoryModel]>{
+        return self.searchText.asObservable()
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .flatMapLatest {
+                client.repositoriesWithUsername(username: $0).catchError({ error in
+                    switch error {
+                    case APIClientError.BadStatus:
+                        print("Error: \(error)")
+                        return Observable.just([])
+                    default:
+                        print("Error: \(error)")
+                        return Observable.just([])
+                    }
+                })
+            }
             .asDriver(onErrorJustReturn: [])
     }
     

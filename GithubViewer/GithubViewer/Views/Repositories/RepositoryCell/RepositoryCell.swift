@@ -23,4 +23,17 @@ class RepositoryCell: UITableViewCell {
         // Initialization code
     }
 
+    // MARK: - Config
+    func setupCellWithRepository(repository : RepositoryModel) {
+        nameLabel.text = repository.name
+        descriptionLabel.text = repository.repoDescription
+        
+        if let starsCount = repository.starsCount{
+            starsCountLabel.text = "Stars : \(starsCount)"
+        }
+        
+        if let forksCount = repository.forksCount{
+            forkCountLabel.text = "Forks : \(forksCount)"
+        }
+    }
 }
