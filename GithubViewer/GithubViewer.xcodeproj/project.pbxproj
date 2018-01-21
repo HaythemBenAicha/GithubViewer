@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1282393E2014FB3000FCC667 /* SectionOfRepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1282393D2014FB3000FCC667 /* SectionOfRepositoriesModel.swift */; };
 		12904F2E2010143A00289779 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F2D2010143A00289779 /* Constants.swift */; };
 		12904F30201014EE00289779 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F2F201014EE00289779 /* RepositoryModel.swift */; };
 		12904F342010164400289779 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12904F332010164400289779 /* APIResource.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1282393D2014FB3000FCC667 /* SectionOfRepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfRepositoriesModel.swift; sourceTree = "<group>"; };
 		12904F2D2010143A00289779 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		12904F2F201014EE00289779 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		12904F332010164400289779 /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				12904F2F201014EE00289779 /* RepositoryModel.swift */,
+				1282393D2014FB3000FCC667 /* SectionOfRepositoriesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -292,12 +295,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GithubViewer/Pods-GithubViewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +327,7 @@
 				12FDA4C9200D78BC00FF29C2 /* RepositoriesViewController.swift in Sources */,
 				12FDA4C7200D78BC00FF29C2 /* AppDelegate.swift in Sources */,
 				12904F342010164400289779 /* APIResource.swift in Sources */,
+				1282393E2014FB3000FCC667 /* SectionOfRepositoriesModel.swift in Sources */,
 				12904F2E2010143A00289779 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

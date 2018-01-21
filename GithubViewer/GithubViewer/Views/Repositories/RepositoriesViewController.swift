@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxDataSources
 
 class RepositoriesViewController: UIViewController {
     
@@ -21,6 +22,17 @@ class RepositoriesViewController: UIViewController {
     private let searchText = Variable<String?>(nil)
     private let viewModel = RepositoriesViewModel()
     
+    private let dataSource = RxTableViewSectionedReloadDataSource<SectionOfRepositoriesModel>(
+        configureCell: { (_, tv, ip, repository: RepositoryModel) in
+            let cell = tv.dequeueReusableCell(withIdentifier: "RepositoryCell") as! RepositoryCell
+            cell.setupCellWithRepository(repository: repository)
+            return cell
+    },
+        titleForHeaderInSection: { dataSource, sectionIndex in
+            let section = dataSource[sectionIndex]
+            return section.items.count > 0 ? "\(section.header) (\(section.items.count))" : "No repositories found"
+    })
+    
     // MARK: - Lifecycle Methodes
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +41,9 @@ class RepositoriesViewController: UIViewController {
     
     // MARK: - Private
     private func setupObserving() {
+        
         viewModel.getRepositories()
-            .drive(repositoriesTableView.rx.items(cellIdentifier: "RepositoryCell")) { (_, repository, cell : RepositoryCell) in
-                cell.setupCellWithRepository(repository: repository)
-        }.disposed(by: disposeBag)
+            .drive(repositoriesTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
         repositoriesSearchBar.rx.text
             .orEmpty

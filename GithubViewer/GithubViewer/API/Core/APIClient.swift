@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import RxCocoa
 
 
 enum APIClientError: Error {
@@ -21,9 +22,11 @@ enum HttpMethod: String {
     case GET = "GET"
 }
 
+
+
 final class APIClient {
     
-    // MARK: - Private Properies
+    // MARK: - Private
     private let baseURL: URL
     private let session: URLSession
     
@@ -84,7 +87,6 @@ extension APIClient {
         }
     }
 }
-
 
 
 

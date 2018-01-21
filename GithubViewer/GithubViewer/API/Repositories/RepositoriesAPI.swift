@@ -7,6 +7,8 @@
 //
 
 import RxSwift
+import RxDataSources
+
 
 // MARK: - Enum
 enum RepositoriesAPI {
@@ -34,7 +36,6 @@ extension RepositoriesAPI: APIResource {
 
 // MARK: - Get Server Sesponse
 extension APIClient {
-    
     class func repositoriesAPIClient() -> APIClient {
         return APIClient(baseURL: (Constants.Config.baseURL)!)
     }
@@ -45,6 +46,24 @@ extension APIClient {
         }
         return objects(resource: RepositoriesAPI.userRepositories(username: username))
         
+    }
+    
+    func sectionedRepositoriesWithUsername(username: String) -> Observable<[SectionOfRepositoriesModel]> {
+        let all = self.repositoriesWithUsername(username: username)
+        return all.map({ (repos) in
+            self.getSectionsFromRepositories(repositories: repos)
+        })
+    }
+    
+    func getSectionsFromRepositories(repositories: [RepositoryModel]) -> [SectionOfRepositoriesModel]{
+        var sections = [SectionOfRepositoriesModel]()
+        if let repositoriesHeaders = NSOrderedSet.init(array: repositories.map({$0.language ?? "Not Indicated"})).array as? [String]{
+            repositoriesHeaders.forEach({ (header) in
+                let section = SectionOfRepositoriesModel(header: header, items: repositories.filter{$0.language == header || $0.language == nil})
+                sections.append(section)
+            })
+        }
+        return sections
     }
 }
 

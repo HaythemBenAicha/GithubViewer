@@ -11,6 +11,7 @@ import Foundation
 enum APIResourceError: Error {
     case InvalidURL
     case UnknownError
+    case Other(Error)
 }
 
 protocol APIResource {
@@ -31,3 +32,4 @@ extension APIResource {
         return request
     }
 }
+

@@ -16,6 +16,7 @@ struct RepositoryModel : Codable {
     let repoDescription: String?
     let forksCount : Int?
     let starsCount : Int?
+    let language : String?
 }
 
 extension RepositoryModel {
@@ -25,5 +26,7 @@ extension RepositoryModel {
         case repoDescription = "description"
         case forksCount = "forks_count"
         case starsCount = "stargazers_count"
+        case language
     }
 }
+
