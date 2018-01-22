@@ -50,12 +50,19 @@ extension APIClient {
     
     func sectionedRepositoriesWithUsername(username: String) -> Observable<[SectionOfRepositoriesModel]> {
         let all = self.repositoriesWithUsername(username: username)
-        return all.map({ (repos) in
-            self.getSectionsFromRepositories(repositories: repos)
-        })
+       
+        return all.map({ (repositories) in
+                self.sortedItems(repositories: repositories)
+            })
+            .map({ (repositories) in
+                self.sectionedRepositories(repositories: repositories)
+            })
+            .map({ (sectionedRepositories) in
+                self.sortedSections(sections: sectionedRepositories)
+            })
     }
     
-    func getSectionsFromRepositories(repositories: [RepositoryModel]) -> [SectionOfRepositoriesModel]{
+    func sectionedRepositories(repositories: [RepositoryModel]) -> [SectionOfRepositoriesModel]{
         var sections = [SectionOfRepositoriesModel]()
         if let repositoriesHeaders = NSOrderedSet.init(array: repositories.map({$0.language ?? "Not Indicated"})).array as? [String]{
             repositoriesHeaders.forEach({ (header) in
@@ -63,7 +70,36 @@ extension APIClient {
                 sections.append(section)
             })
         }
+        
         return sections
     }
+    
 }
 
+// MARK: - Sorting
+extension APIClient {
+    
+    // TODO: - Section Sorting
+    func sortedSections(sections : [SectionOfRepositoriesModel]) -> [SectionOfRepositoriesModel] {
+        
+        let sortedSections = sections.sorted { (section1, section2) -> Bool in
+            section1.items.count > section2.items.count
+        }
+        
+        return sortedSections
+    }
+    
+    // TODO: - Section Sorting
+    func sortedItems(repositories : [RepositoryModel]) -> [RepositoryModel] {
+        
+        let sortedItems = section.sorted { (item1, item2) -> Bool in
+            
+            let item1Stars = item1.starsCount ?? 0
+            let item2Stars = item2.starsCount ?? 0
+            
+            return item1Stars > item2Stars
+        }
+    
+        return sortedItems
+    }
+}
