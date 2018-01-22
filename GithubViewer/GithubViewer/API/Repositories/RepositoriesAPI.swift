@@ -92,7 +92,7 @@ extension APIClient {
     // TODO: - Section Sorting
     func sortedItems(repositories : [RepositoryModel]) -> [RepositoryModel] {
         
-        let sortedItems = section.sorted { (item1, item2) -> Bool in
+        let sortedItems = repositories.sorted { (item1, item2) -> Bool in
             
             let item1Stars = item1.starsCount ?? 0
             let item2Stars = item2.starsCount ?? 0

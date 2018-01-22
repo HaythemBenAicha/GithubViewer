@@ -35,5 +35,18 @@ class RepositoryCell: UITableViewCell {
         if let forksCount = repository.forksCount{
             forkCountLabel.text = "Forks : \(forksCount)"
         }
+        
+        if let updatedAt = repository.updatedAt{
+            
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.dateFormat = "yyyy-MM-dd'T'hh:mm:ssZ"
+            
+            let dateFormatterPrint = DateFormatter()
+            dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+            
+            if let date: Date = dateFormatterGet.date(from: updatedAt){
+                updatedLabel.text = "Updated: \(dateFormatterPrint.string(from: date))"
+            }
+        }
     }
 }
